@@ -67,14 +67,8 @@ class AlunniController
       return $response->withStatus(405);
     }    
 
-    $sql = "SELECT * FROM Alunni
-            WHERE Matricola = $matricola";
-
-    $result = $mysqli_connection->query($sql);
-    $results = $result->fetch_all(MYSQLI_ASSOC);
-
-    $response->getBody()->write(json_encode($results));
-    return $response->withHeader("Content-type", "application/json")->withStatus(201);
+    $response->getBody()->write(json_encode($result));
+    return $response->withStatus(201);
   }
 
   public function deleteAlunno(Request $request, Response $response, $args){

@@ -1,6 +1,6 @@
 import {useState} from 'react';
 
-export default function FormDiInserimento({popolaAlunni}){
+export default function FormDiInserimento({alunno, popolaAlunni}){
     const [codiceFiscale, setCodiceFiscale] = useState("");
     const [nome, setNome] = useState("");
     const [cognome, setCognome] = useState("");
@@ -38,19 +38,19 @@ export default function FormDiInserimento({popolaAlunni}){
             <h1> Form di Inserimento </h1>
             <div> 
                 <label>Codice Fiscale: </label>
-                <input type='text' onChange={cambioCodiceFiscale} /> 
+                <input type='text' onChange={cambioCodiceFiscale} value={codiceFiscale} /> 
             </div>
             <div> 
                 <label>Nome: </label>
-                <input type='text' onChange={cambioNome} /> 
+                <input type='text' onChange={cambioNome} value={nome} /> 
             </div>
             <div> 
                 <label>Cognome: </label>
-                <input type='text' onChange={cambioCognome} /> 
+                <input type='text' onChange={cambioCognome} value={cognome} /> 
             </div>
             <div> 
                 <label>Età: </label>
-                <input type='number' onChange={cambioEta} /> 
+                <input type='number' onChange={cambioEta} value={eta} /> 
             </div>
             <div>
                 <button onClick={salvaAlunno}> Salva </button>

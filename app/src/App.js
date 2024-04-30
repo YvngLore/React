@@ -23,7 +23,7 @@ function App() {
     <div className='App'>
       {
         pronto ?
-          alunni.map(a => (
+          alunni && alunni.map(a => (
             <Alunno alunno={a} popolaAlunni={popolaAlunni} key={a.Matricola} />
           ))
 
